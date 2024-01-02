@@ -5,7 +5,7 @@ import { ax } from './axios'
 export const fetchBookList = async (
   req: type.BookListQueryModel
 ): Promise<StandardResponseModel<type.BookOverviewServerModel[]>> => {
-  const res = await ax.get(`/search/${req.filter}/${req.page}`)
+  const res = await ax.get(`/search/${req.keyword}/${req.page || 1}`)
   return res.data
 }
 

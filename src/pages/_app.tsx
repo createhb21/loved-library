@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { type ReactElement } from 'react'
 import React from 'react'
 import { globalQueryErrorHandler } from '@/libs/client/globalQueryErrorHandler'
 import { globalStyles, theme } from '@/styles'
 import { ThemeProvider, Global } from '@emotion/react'
+import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import type { AppContext, AppInitialProps, AppLayoutProps } from 'next/app'
 import { type NextComponentType } from 'next/types'
 
@@ -22,6 +22,7 @@ const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
       new QueryClient({
         defaultOptions: {
           queries: {
+            retry: 0,
             suspense: true,
             retryOnMount: false,
             refetchOnReconnect: false,

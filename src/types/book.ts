@@ -20,6 +20,7 @@ export interface BookDetailServerModel {
 export interface BookListQueryModel {
   order?: Order
   filter?: Filter
+  keyword?: string
   page?: number
   size?: number
 }

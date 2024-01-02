@@ -25,9 +25,9 @@ function BookListContainer({ staticFilters }: BookListContainerProps) {
     <S.RecruitListContainer>
       <S.A11yTitle>loved library</S.A11yTitle>
       <FilterList filters={searchFilters} {...getFilterProps()} />
-      {/* <Suspense fallback={<ListSkeleton count={6} hasTags />}>
+      <Suspense fallback={<ListSkeleton count={6} hasTags />}>
         <BookList filters={searchFilters} handleResetFilter={handleResetFilter} />
-      </Suspense> */}
+      </Suspense>
     </S.RecruitListContainer>
   )
 }
