@@ -1,9 +1,7 @@
 import { useBookDetailQuery } from '@/services/book'
-import dynamic from 'next/dynamic'
 
+import BookDetailResults from '../bookDetailResults/BookDetailResults.component'
 import * as S from './BookDetailContainer.styled'
-
-const BookDetailResults = dynamic(() => import('../bookDetailResults/BookDetailResults.component'), { ssr: false })
 
 interface BookDetailContainerProps {
   bookId: string
@@ -11,11 +9,10 @@ interface BookDetailContainerProps {
 
 const BookDetailContainer = ({ bookId }: BookDetailContainerProps) => {
   const { data: bookDetailData } = useBookDetailQuery(bookId)
-  console.log('bookDetailData:', bookDetailData)
 
   return (
     <S.BookDetailContainer>
-      <BookDetailResults data={bookDetailData?.data} />
+      <BookDetailResults data={bookDetailData} />
     </S.BookDetailContainer>
   )
 }
