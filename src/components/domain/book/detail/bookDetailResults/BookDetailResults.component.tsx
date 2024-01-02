@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { ViewIcon } from '@/assets/icon'
+import { PagesIcon, PriceIcon, ViewIcon } from '@/assets/icon'
 import { DEFAULT_THUMBNAIL_IMAGE } from '@/constants'
 
 import { BookDetailServerModel } from '@/types'
@@ -35,8 +35,18 @@ const BookDetailResults = ({ data }: BookDetailResultsProps) => {
             <S.PublisherName>{data?.publisher}</S.PublisherName>
             <S.Title>{data?.title}</S.Title>
             <S.IconDesc>
-              <ViewIcon />
-              {data?.rating}
+              <span>
+                <ViewIcon />
+                {data?.rating}
+              </span>
+              <span>
+                <PagesIcon />
+                {data?.pages}
+              </span>
+              <span>
+                <PriceIcon />
+                {data?.price}
+              </span>
             </S.IconDesc>
           </S.DescList>
         </S.CTAWrapper>

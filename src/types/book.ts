@@ -25,6 +25,7 @@ export interface BookDetailServerModel {
   rating: string
   desc: string
   image: string
+  price: string
 }
 
 export interface BookListQueryModel {

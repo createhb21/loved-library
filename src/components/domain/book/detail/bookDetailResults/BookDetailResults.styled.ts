@@ -86,6 +86,13 @@ export const IconDesc = styled.span`
   align-items: center;
   column-gap: 4px;
   width: max-content;
+
+  & > span {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    width: max-content;
+  }
 `
 
 export const recruitButton = css`
