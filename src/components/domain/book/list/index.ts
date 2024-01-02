@@ -1,1 +1,1 @@
-export { default as RecruitListContainer } from './container/BookListContainer.component'
+export { default as BookListContainer } from './container/BookListContainer.component'

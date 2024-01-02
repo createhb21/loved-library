@@ -53,7 +53,7 @@ export const SelectedOption = styled.span`
 
 export const ArrowIcon = styled(IconArrow)`
   ${({ theme }) => css`
-    fill: ${theme.colors.gray50};
+    fill: ${theme.color.gray_50};
   `}
 `
 

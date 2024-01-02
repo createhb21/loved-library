@@ -13,3 +13,9 @@ export const RecruitListContainer = styled.section`
     }
   `}
 `
+
+export const A11yTitle = styled.h1`
+  ${({ theme }) => css`
+    ${theme.a11y.visuallyHidden};
+  `}
+`

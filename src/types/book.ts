@@ -29,4 +29,4 @@ export interface BookDetailQueryModel {
 }
 
 export type Order = 'recent' | 'end' | 'popular' | 'view' | 'rand'
-export type Filter = 'valid' | 'expired' | 'todayUpload' | 'almostDeadline' | 'deadline'
+export type Filter = 'or' | 'not'

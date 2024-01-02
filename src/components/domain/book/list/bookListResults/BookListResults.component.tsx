@@ -12,12 +12,14 @@ interface RecruitListResultsProps {
 }
 
 const RecruitListResults = ({ filters, handleResetFilter }: RecruitListResultsProps) => {
-  const { data: searchedRecruitListData } = useBookListQuery(filters)
+  const { data: searchedBookListData } = useBookListQuery(filters)
+
+  console.log('searchedBookListData:', searchedBookListData)
 
   return (
     <S.SearchResults>
-      {searchedRecruitListData?.data?.length ? (
-        <SearchedList data={searchedRecruitListData?.data} />
+      {searchedBookListData?.data?.length ? (
+        <SearchedList data={searchedBookListData?.data} />
       ) : (
         <NoResult title="찾고 있는 검색 결과가 없어요.">
           <Button css={S.resetBtn} size="md" label="필터 초기화" variant="secondary" onClick={handleResetFilter} />

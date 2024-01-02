@@ -72,11 +72,11 @@ export const Title = styled.h3`
   `}
 `
 
-export const TimeDesc = styled.span`
+export const AuthorsDesc = styled.span`
   margin-bottom: 20px;
 `
 
-export const CompanyName = styled.strong``
+export const PublisherName = styled.strong``
 
 export const IconDesc = styled.span`
   position: absolute;
@@ -94,7 +94,7 @@ export const recruitButton = css`
   right: 4px;
 `
 
-export const OneDepthPositionList = styled.ul`
+export const Description = styled.ul`
   display: flex;
   align-items: center;
   column-gap: 12px;

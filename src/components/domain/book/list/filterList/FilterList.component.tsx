@@ -1,11 +1,12 @@
 import { useMemo } from 'react'
 
-import { filterList, orderList } from '@/constants/book'
+import { filterList } from '@/constants/book'
 import { KeyOf, SelectedFilterTag, ValueOf } from '@/types'
 import { BookListQueryModel as SearchFilter } from '@/types/book'
 import { Filter } from './Filter.component'
 import * as S from './FilterList.styled'
 import { FilterManagement } from './management/FilterManagement.component'
+import { InputFilter } from './management/InputFilter.component'
 
 interface FilterListProps {
   filters: SearchFilter
@@ -22,13 +23,6 @@ const FilterList = ({ filters, handleApplyFilter, handleDeleteTag, handleResetFi
         key: 'filter',
         value: filters.filter,
         label: filterList[filters.filter],
-      })
-    }
-    if (filters?.order) {
-      result.push({
-        key: 'order',
-        value: filters.order,
-        label: orderList[filters.order],
       })
     }
     return result
@@ -49,16 +43,6 @@ const FilterList = ({ filters, handleApplyFilter, handleDeleteTag, handleResetFi
             onSelect={handleApplyFilter('filter')}
           />
         </li>
-        <li>
-          <Filter
-            id="order"
-            name="order"
-            placeholder="정렬"
-            options={orderList}
-            selectedOption={filters?.order || ''}
-            onSelect={handleApplyFilter('order')}
-          />
-        </li>
       </S.FilterList>
       {isShowTagManagement && (
         <FilterManagement
@@ -67,6 +51,7 @@ const FilterList = ({ filters, handleApplyFilter, handleDeleteTag, handleResetFi
           onReset={handleResetFilter}
         />
       )}
+      {isShowTagManagement && <InputFilter />}
     </S.FilterListContainer>
   )
 }

@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { RecruitListContainer } from '@/components/domain/book/list'
+import { BookListContainer } from '@/components/domain/book/list'
 import { Layout } from '@/components/public/Layout'
 import type { BookListQueryModel as SearchFilter } from '@/types/book'
 import type { GetServerSideProps, NextLayoutPage } from 'next'
@@ -9,7 +9,7 @@ interface BookSearchPageProps {
 }
 
 const BookSearchPage: NextLayoutPage = ({ staticFilters = {} as SearchFilter }: BookSearchPageProps) => {
-  return <RecruitListContainer staticFilters={staticFilters} />
+  return <BookListContainer staticFilters={staticFilters} />
 }
 
 BookSearchPage.getLayout = function getLayout(page: ReactElement) {

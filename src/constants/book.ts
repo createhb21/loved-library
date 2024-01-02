@@ -1,9 +1,6 @@
 export const filterList = {
-  valid: '마감안된',
-  expired: '만료',
-  todayUpload: '최신',
-  almostDeadline: '마감임박',
-  deadline: '오늘마감',
+  or: 'OR',
+  not: 'NOT',
 }
 
 export const orderList = {

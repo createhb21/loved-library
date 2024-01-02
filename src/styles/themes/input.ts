@@ -102,10 +102,11 @@ export const input = {
     }
   `,
   primary: css`
-    ${font.regular_15};
+    ${font.regular_12};
     width: 100%;
     height: 52px;
     border: 1px solid ${color.gray_20};
+    border-radius: 8px;
     padding: 9px 12px;
     transition: 0.3s;
 
