@@ -12,21 +12,34 @@ export const InputManagement = styled.form`
     min-height: 52px;
     padding: 10px 20px;
     background-color: ${theme.color.gray_20_4};
+
+    @media ${theme.breakPoint.device.maxTablet} {
+      flex-direction: column;
+    }
   `}
 `
 
 export const BtnsBox = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  display: flex;
-  align-items: center;
+  ${({ theme }) => css`
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    transform: translateY(-50%);
+
+    @media ${theme.breakPoint.device.maxTablet} {
+      position: unset;
+      top: unset;
+      right: unset;
+      margin-top: 24px;
+    }
+  `}
 `
 
 export const SubmitBtn = styled.button`
   ${({ theme }) => css`
     ${theme.font.medium_15};
-    transform: translateY(-50%);
     display: flex;
     justify-content: center;
     align-self: flex-start;

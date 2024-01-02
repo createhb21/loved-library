@@ -15,7 +15,7 @@ interface FilterListProps {
   handleResetFilter: () => void
 }
 
-const FilterList = ({ filters, handleApplyFilter, handleDeleteTag, handleResetFilter }: FilterListProps) => {
+const FilterList = ({ filters, handleApplyFilter, handleResetFilter }: FilterListProps) => {
   const selectedFilterTags = useMemo(() => {
     const result = []
     if (filters?.filter) {
@@ -44,14 +44,8 @@ const FilterList = ({ filters, handleApplyFilter, handleDeleteTag, handleResetFi
           />
         </li>
       </S.FilterList>
-      {isShowTagManagement && (
-        <FilterManagement
-          selectedFilterTags={selectedFilterTags}
-          onDelete={handleDeleteTag}
-          onReset={handleResetFilter}
-        />
-      )}
-      {isShowTagManagement && <InputFilter handleApplyFilter={handleApplyFilter} />}
+      {isShowTagManagement && <FilterManagement selectedFilterTags={selectedFilterTags} onReset={handleResetFilter} />}
+      {isShowTagManagement && <InputFilter filters={filters} handleApplyFilter={handleApplyFilter} />}
     </S.FilterListContainer>
   )
 }

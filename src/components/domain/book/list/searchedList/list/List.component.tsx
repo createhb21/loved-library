@@ -12,49 +12,37 @@ interface ListProps {
 
 interface ListItemProps {
   className?: string
-  view: number
   title: string
-  endTime: string
-  bookmark: number
-  recruitId: number
-  companyName: string
-  createdTime: string
-  companyThumbnail: string
+  subtitle: string
+  image: string
+  url: string
+  price: string
+  isbn13: string
 }
 
 export const List = ({ className, children }: ListProps) => {
   return <S.List className={className}>{children}</S.List>
 }
 
-List.Item = function ListItem({
-  className,
-  recruitId,
-  title,
-  companyName,
-  companyThumbnail,
-  view,
-  bookmark,
-  createdTime,
-  endTime,
-}: ListItemProps) {
+List.Item = function ListItem({ className, title, subtitle, image, url, price, isbn13 }: ListItemProps) {
   return (
     <S.ListItem className={className}>
-      <Link href={`${PATH.DETAIL}/${recruitId}`} passHref>
+      <Link href={`${PATH.DETAIL}/${isbn13}`} passHref>
         <S.AnchorWrapper>
           <S.Image>
-            <NextImage src={companyThumbnail || DEFAULT_THUMBNAIL_IMAGE} alt="" fill />
+            <NextImage src={image || DEFAULT_THUMBNAIL_IMAGE} alt="" fill />
           </S.Image>
           <S.DescList>
             <S.TimeDesc>{/* {getCurrentDateTime(createdTime)}~{getCurrentDateTime(endTime)} */}</S.TimeDesc>
-            <S.CompanyName>{companyName}</S.CompanyName>
+            <S.CompanyName>{subtitle}</S.CompanyName>
             <S.Title>{title}</S.Title>
             <S.FloatDesc>
               <S.IconDesc>
-                <BookmarkIcon /> {bookmark}
+                <BookmarkIcon /> {price}
               </S.IconDesc>
               <S.IconDesc>
                 <ViewIcon />
-                {view}
+                {url}
               </S.IconDesc>
             </S.FloatDesc>
           </S.DescList>

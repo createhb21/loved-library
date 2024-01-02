@@ -1,8 +1,17 @@
+export interface BookListServerModel {
+  books: BookOverviewServerModel[]
+  error: string
+  page: string
+  total: string
+}
+
 export interface BookOverviewServerModel {
   title: string
   subtitle: string
   image: string
   url: string
+  isbn13: string
+  price: string
 }
 
 export interface BookDetailServerModel {

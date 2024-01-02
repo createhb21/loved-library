@@ -26,24 +26,6 @@ interface InputProps {
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void
 }
 
-interface UnitInputProps extends Omit<InputProps, 'type'> {
-  className?: string
-  unit: string
-}
-
-interface VerifyInputProps extends Omit<InputProps, 'type' | 'disabled'> {
-  isSendCode: string
-  isVerifyCheck: boolean
-  verifyRef: ForwardedRef<HTMLInputElement>
-  verifyName: string
-  verifyCodeValue: string
-  verifyCodeError: string
-  onFormChange: () => void
-  onSendCode: () => void
-  onCheckCode: () => void
-  onTimeoutCode: () => void
-}
-
 interface LabelInputContextValue {
   id: string
   title: string
@@ -115,6 +97,7 @@ LabelInput.Input = forwardRef(function Input(
       placeholder={placeholder}
       onChange={onChange}
       onBlur={onBlur}
+      onFocus={onFocus}
     />
   )
 })

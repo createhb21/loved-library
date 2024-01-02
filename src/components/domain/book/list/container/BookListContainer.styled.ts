@@ -8,7 +8,7 @@ export const RecruitListContainer = styled.section`
     margin: 0 auto;
     padding: 40px 0;
 
-    @media ${theme.breakPoint.device.tablet} {
+    @media ${theme.breakPoint.device.desktop} {
       padding: 40px 20px;
     }
   `}
