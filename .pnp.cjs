@@ -37,6 +37,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.10.6"],\
           ["@types/react", "npm:18.2.46"],\
           ["@types/react-dom", "npm:18.2.18"],\
+          ["@types/react-lazy-load-image-component", "npm:1.6.3"],\
           ["@types/uuid", "npm:9.0.7"],\
           ["@typescript-eslint/eslint-plugin", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:6.17.0"],\
           ["@typescript-eslint/parser", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:6.17.0"],\
@@ -53,6 +54,7 @@ const RAW_RUNTIME_STATE =
           ["next", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:14.0.4"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:18.2.0"],\
+          ["react-lazy-load-image-component", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:1.6.0"],\
           ["react-loading-skeleton", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:3.3.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["uuid", "npm:9.0.1"]\
@@ -3594,6 +3596,17 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/react-lazy-load-image-component", [\
+      ["npm:1.6.3", {\
+        "packageLocation": "../../.yarn/berry/cache/@types-react-lazy-load-image-component-npm-1.6.3-b85f8234ff-10c0.zip/node_modules/@types/react-lazy-load-image-component/",\
+        "packageDependencies": [\
+          ["@types/react-lazy-load-image-component", "npm:1.6.3"],\
+          ["@types/react", "npm:18.2.46"],\
+          ["csstype", "npm:3.1.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/scheduler", [\
       ["npm:0.16.8", {\
         "packageLocation": "../../.yarn/berry/cache/@types-scheduler-npm-0.16.8-303819b439-10c0.zip/node_modules/@types/scheduler/",\
@@ -6355,6 +6368,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["lodash.throttle", [\
+      ["npm:4.1.1", {\
+        "packageLocation": "../../.yarn/berry/cache/lodash.throttle-npm-4.1.1-856641af92-10c0.zip/node_modules/lodash.throttle/",\
+        "packageDependencies": [\
+          ["lodash.throttle", "npm:4.1.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["loose-envify", [\
       ["npm:1.4.0", {\
         "packageLocation": "../../.yarn/berry/cache/loose-envify-npm-1.4.0-6307b72ccf-10c0.zip/node_modules/loose-envify/",\
@@ -6381,6 +6403,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.10.6"],\
           ["@types/react", "npm:18.2.46"],\
           ["@types/react-dom", "npm:18.2.18"],\
+          ["@types/react-lazy-load-image-component", "npm:1.6.3"],\
           ["@types/uuid", "npm:9.0.7"],\
           ["@typescript-eslint/eslint-plugin", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:6.17.0"],\
           ["@typescript-eslint/parser", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:6.17.0"],\
@@ -6397,6 +6420,7 @@ const RAW_RUNTIME_STATE =
           ["next", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:14.0.4"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:18.2.0"],\
+          ["react-lazy-load-image-component", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:1.6.0"],\
           ["react-loading-skeleton", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:3.3.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["uuid", "npm:9.0.1"]\
@@ -6959,6 +6983,34 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/react-is-npm-16.13.1-a9b9382b4f-10c0.zip/node_modules/react-is/",\
         "packageDependencies": [\
           ["react-is", "npm:16.13.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["react-lazy-load-image-component", [\
+      ["npm:1.6.0", {\
+        "packageLocation": "../../.yarn/berry/cache/react-lazy-load-image-component-npm-1.6.0-2a967b326c-10c0.zip/node_modules/react-lazy-load-image-component/",\
+        "packageDependencies": [\
+          ["react-lazy-load-image-component", "npm:1.6.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:1.6.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-lazy-load-image-component-virtual-4dd6c44c86/3/.yarn/berry/cache/react-lazy-load-image-component-npm-1.6.0-2a967b326c-10c0.zip/node_modules/react-lazy-load-image-component/",\
+        "packageDependencies": [\
+          ["react-lazy-load-image-component", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:1.6.0"],\
+          ["@types/react", "npm:18.2.46"],\
+          ["@types/react-dom", "npm:18.2.18"],\
+          ["lodash.debounce", "npm:4.0.8"],\
+          ["lodash.throttle", "npm:4.1.1"],\
+          ["react", "npm:18.2.0"],\
+          ["react-dom", "virtual:3686701bc9b92ff544949ff482fb45784e439212176c9abfdb39b26eafb8142cfa63d848550b47d39c5a875b3ebafaf0a2bb8f50c8307e9cec629d9922288886#npm:18.2.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\

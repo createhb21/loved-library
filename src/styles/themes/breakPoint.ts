@@ -4,7 +4,7 @@ export const breakPoint = {
     tablet: 1229,
   },
   device: {
-    tablet: `(min-width:  767px)`,
+    tablet: `(min-width: 767px)`,
     desktop: `(min-width: 1229px)`,
     maxTablet: `(max-width: 767px)`,
     maxDesktop: `(max-width: 1229px)`,

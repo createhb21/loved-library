@@ -1,3 +1,4 @@
+import { PageTemplate } from '@/components/public/PageTemplate'
 import { useBookDetailQuery } from '@/services/book'
 
 import BookDetailResults from '../bookDetailResults/BookDetailResults.component'
@@ -11,9 +12,11 @@ const BookDetailContainer = ({ bookId }: BookDetailContainerProps) => {
   const { data: bookDetailData } = useBookDetailQuery(bookId)
 
   return (
-    <S.BookDetailContainer>
-      <BookDetailResults data={bookDetailData} />
-    </S.BookDetailContainer>
+    <PageTemplate>
+      <PageTemplate.PageContentsSection css={S.bookDetailContainerCss}>
+        <BookDetailResults data={bookDetailData} />
+      </PageTemplate.PageContentsSection>
+    </PageTemplate>
   )
 }
 
