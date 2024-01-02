@@ -2,16 +2,11 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 export const List = styled.ul`
-  ${({ theme }) => css`
-    display: grid;
-    padding: 0 20px;
-    gap: 10px;
-
-    @media ${theme.breakPoint.device.desktop} {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-  `}
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+  gap: 10px;
 `
 
 export const ListItem = styled.article`
@@ -81,18 +76,7 @@ export const Title = styled.h3`
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 120px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
     color: ${theme.color.black};
-
-    @media ${theme.breakPoint.device.desktop} {
-      width: max-content;
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
-    }
   `}
 `
 
@@ -114,9 +98,12 @@ export const FloatDesc = styled.span`
     bottom: 6px;
     right: 4px;
 
-    @media ${theme.breakPoint.device.desktop} {
+    @media ${theme.breakPoint.device.maxDesktop} {
       bottom: unset;
-      top: 0;
+      top: 16px;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
     }
   `}
 `

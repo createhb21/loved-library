@@ -1,8 +1,9 @@
+import { useCallback } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { ViewIcon } from '@/assets/icon'
 import { DEFAULT_THUMBNAIL_IMAGE } from '@/constants'
 
 import { BookDetailServerModel } from '@/types'
-import NextImage from 'next/image'
 
 import * as S from './BookDetailResults.styled'
 
@@ -11,12 +12,23 @@ interface BookDetailResultsProps {
 }
 
 const BookDetailResults = ({ data }: BookDetailResultsProps) => {
+  const handleImgError = useCallback((e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.srcset = DEFAULT_THUMBNAIL_IMAGE
+  }, [])
+
   return (
     <S.BookDetailResults>
       <S.ListItem>
         <S.CTAWrapper>
           <S.Image>
-            <NextImage src={data?.image || DEFAULT_THUMBNAIL_IMAGE} alt="" fill />
+            <LazyLoadImage
+              effect="opacity"
+              src={data?.image || DEFAULT_THUMBNAIL_IMAGE}
+              alt=""
+              width="100%"
+              height="100%"
+              onError={handleImgError}
+            />
           </S.Image>
           <S.DescList>
             <S.AuthorsDesc>{data?.authors}</S.AuthorsDesc>

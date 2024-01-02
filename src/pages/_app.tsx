@@ -10,6 +10,7 @@ import type { AppContext, AppInitialProps, AppLayoutProps } from 'next/app'
 import { type NextComponentType } from 'next/types'
 
 import '../styles/font.css'
+import 'react-lazy-load-image-component/src/effects/opacity.css'
 
 const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
   Component,

@@ -3,6 +3,7 @@ export interface BookListServerModel {
   error: string
   page: string
   total: string
+  hasNextPage?: boolean
 }
 
 export interface BookOverviewServerModel {

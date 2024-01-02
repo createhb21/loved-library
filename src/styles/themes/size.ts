@@ -12,8 +12,8 @@ export const size = {
     height_m: '412px',
   },
   container: css`
+    width: 100%;
     max-width: 100%;
-    width: 100vw;
     padding: 0 20px;
 
     @media ${breakPoint.device.tablet} {
