@@ -2,14 +2,20 @@ import { ReactElement } from 'react'
 import { BookListContainer } from '@/components/domain/book/list'
 import { Layout } from '@/components/public/Layout'
 import type { BookListQueryModel as SearchFilter } from '@/types/book'
+import { isServer } from '@/utils/common'
 import type { GetServerSideProps, NextLayoutPage } from 'next'
+import { useRouter } from 'next/router'
 
 interface BookSearchPageProps {
-  staticFilters?: SearchFilter
+  filter?: SearchFilter
+  hasKeyword: boolean
 }
 
-const BookSearchPage: NextLayoutPage = ({ staticFilters = {} as SearchFilter }: BookSearchPageProps) => {
-  return <BookListContainer staticFilters={staticFilters} />
+const BookSearchPage: NextLayoutPage<BookSearchPageProps> = ({ filter = {} as SearchFilter, hasKeyword }) => {
+  const { query } = useRouter()
+  const hasKeywordOnPage = isServer() ? hasKeyword : Boolean(query?.keyword)
+
+  return <BookListContainer staticFilters={filter} hasKeyword={hasKeywordOnPage} />
 }
 
 BookSearchPage.getLayout = function getLayout(page: ReactElement) {
@@ -22,10 +28,12 @@ BookSearchPage.getLayout = function getLayout(page: ReactElement) {
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const filter = query?.filter || ''
+  const hasKeyword = Boolean(query?.keyword)
 
   return {
     props: {
       filter,
+      hasKeyword,
     },
   }
 }

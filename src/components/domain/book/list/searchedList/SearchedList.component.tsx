@@ -9,7 +9,16 @@ const SearchedList = ({ data }: SearchedListProps) => {
   return (
     <List>
       {data?.map(book => (
-        <li key={book.image}>{/* <List.Item title={book.title} /> */}</li>
+        <li key={book.isbn13}>
+          <List.Item
+            title={book.title}
+            subtitle={book.subtitle}
+            image={book.image}
+            url={book.url}
+            price={book.price}
+            isbn13={book.isbn13}
+          />
+        </li>
       ))}
     </List>
   )

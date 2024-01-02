@@ -7,13 +7,11 @@ import { TagBtn } from './TagBtn.component'
 
 interface FilterManagementProps<T> {
   selectedFilterTags: T
-  onDelete: (tag: SelectedFilterTag<any, any>) => () => void
   onReset: () => void
 }
 
 export const FilterManagement = <T extends Array<SelectedFilterTag<any, any>>>({
   selectedFilterTags,
-  onDelete,
   onReset,
 }: FilterManagementProps<T>) => {
   return (
@@ -21,7 +19,7 @@ export const FilterManagement = <T extends Array<SelectedFilterTag<any, any>>>({
       <S.TagList>
         {selectedFilterTags.map(tag => (
           <li key={tag.label}>
-            <TagBtn css={S.tagBtn} variant="ghost" label={tag.label} onDelete={onDelete(tag)} />
+            <TagBtn css={S.tagBtn} variant="ghost" label={tag.label} onDelete={onReset} />
           </li>
         ))}
       </S.TagList>

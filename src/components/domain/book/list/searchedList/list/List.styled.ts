@@ -7,7 +7,7 @@ export const List = styled.ul`
     padding: 0 20px;
     gap: 10px;
 
-    @media ${theme.breakPoint.device.tablet} {
+    @media ${theme.breakPoint.device.desktop} {
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }

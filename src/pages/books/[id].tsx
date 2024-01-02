@@ -12,7 +12,7 @@ interface BookDetailPageProps {
   bookId: string
 }
 
-const BookDetailPage: NextLayoutPage<BookDetailPageProps> = ({ bookId }: BookDetailPageProps) => {
+const BookDetailPage: NextLayoutPage<BookDetailPageProps> = ({ bookId }) => {
   return (
     <Suspense>
       <BookDetailContainer bookId={bookId} />
