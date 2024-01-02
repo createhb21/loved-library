@@ -1,23 +1,21 @@
-import { Suspense } from 'react'
 import { useBookDetailQuery } from '@/services/book'
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
 
 import * as S from './BookDetailContainer.styled'
 
 const BookDetailResults = dynamic(() => import('../bookDetailResults/BookDetailResults.component'), { ssr: false })
 
-const BookDetailContainer = () => {
-  const {
-    query: { id },
-  } = useRouter()
-  const { data: bookDetailData } = useBookDetailQuery(id as string)
+interface BookDetailContainerProps {
+  bookId: string
+}
+
+const BookDetailContainer = ({ bookId }: BookDetailContainerProps) => {
+  const { data: bookDetailData } = useBookDetailQuery(bookId)
+  console.log('bookDetailData:', bookDetailData)
 
   return (
     <S.BookDetailContainer>
-      <Suspense>
-        <BookDetailResults data={bookDetailData?.data} />{' '}
-      </Suspense>
+      <BookDetailResults data={bookDetailData?.data} />
     </S.BookDetailContainer>
   )
 }

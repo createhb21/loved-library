@@ -51,7 +51,7 @@ const FilterList = ({ filters, handleApplyFilter, handleDeleteTag, handleResetFi
           onReset={handleResetFilter}
         />
       )}
-      {isShowTagManagement && <InputFilter />}
+      {isShowTagManagement && <InputFilter handleApplyFilter={handleApplyFilter} />}
     </S.FilterListContainer>
   )
 }

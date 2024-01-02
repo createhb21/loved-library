@@ -5,9 +5,15 @@ import { ResetIcon, SearchIcon } from '@/assets/icon'
 import LabelInput from '@/components/common/labelInput/LabelInput.component'
 import useBoolean from '@/hooks/useBoolean'
 import useInput from '@/hooks/useInput'
+import { KeyOf, ValueOf } from '@/types'
+import { BookListQueryModel as SearchFilter } from '@/types/book'
 import * as S from './InputFilter.styled'
 
-export const InputFilter = () => {
+interface InputFilterProps {
+  handleApplyFilter: (name: KeyOf<SearchFilter>) => (options: ValueOf<SearchFilter>) => void
+}
+
+export const InputFilter = ({ handleApplyFilter }: InputFilterProps) => {
   const [text, onTextChange, resetValue] = useInput()
   const [isBlur, _, setTrue, setFalse] = useBoolean(false)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -25,6 +31,7 @@ export const InputFilter = () => {
       return
     } else {
       //   onInputSubmit(text)
+      handleApplyFilter('keyword')(text)
     }
   }
 
