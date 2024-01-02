@@ -8,12 +8,14 @@ import { input } from './input'
 import { layout } from './layout'
 import { scrollbar } from './scrollbar'
 import { size } from './size'
+import { tag } from './tag'
 import { zIndex } from './zIndex'
 
 export const theme = {
   color,
   font,
   button,
+  tag,
   zIndex,
   size,
   layout,

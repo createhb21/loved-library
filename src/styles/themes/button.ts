@@ -1,289 +1,148 @@
 import { css } from '@emotion/react'
+import { color, font } from '.'
 
-import { font } from './font'
-import { color } from './color'
-
-const mixinBtn = css`
+const flexBoxCenter = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  border-radius: 2px;
-  padding: 0 18px;
-`
-
-const mixinBtn2 = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 28px;
-  border-radius: 4px;
-  padding: 0 12px;
 `
 
 export const button = {
-  primary: css`
-    ${mixinBtn};
-    ${font.medium_14};
-    color: ${color.white};
-    background-color: ${color.blue_10};
-
-    &:not(:disabled):hover {
-      background-color: ${color.blue_20};
-    }
-
-    &:disabled {
-      background-color: ${color.blue_10_40};
-    }
-  `,
-
-  secondary: css`
-    ${mixinBtn};
-    ${font.medium_14};
-    border: 1px solid ${color.gray_20};
-    color: ${color.gray_60};
-    background-color: ${color.gray_10};
-
-    &:not(:disabled):hover {
-      border: 1px solid ${color.gray_30};
-      background-color: ${color.gray_20};
-    }
-
-    &:disabled {
-      opacity: 0.6;
-    }
-  `,
-
-  third: css`
-    ${mixinBtn};
-    ${font.medium_14};
-    border: 1px solid ${color.gray_20};
-    color: ${color.blue_10};
-    background-color: ${color.gray_10};
-
-    &:not(:disabled):hover {
-      background-color: ${color.gray_20};
-      border: 1px solid ${color.gray_30};
-    }
-
-    &:disabled {
-      opacity: 0.4;
-      background-color: ${color.gray_10};
-      border: 1px solid ${color.gray_20};
-    }
-  `,
-
-  outlined: css`
-    ${mixinBtn2};
-    ${font.medium_13};
-    border: 1px solid ${color.gray_30};
-    color: ${color.gray_70};
-    background-color: ${color.white};
-
-    &:not(:disabled):hover {
-      border: 1px solid ${color.gray_30};
-      background-color: ${color.gray_20};
-    }
-
-    &:disabled {
-      opacity: 0.4;
-      background-color: ${color.white};
-    }
-  `,
-  error: css`
-    ${mixinBtn};
-    ${font.medium_14};
-    color: ${color.red_20};
-    background-color: ${color.gray_10};
-    border: 1px solid ${color.gray_20};
-
-    &:not(:disabled):hover {
-      background-color: ${color.red_30};
-      background-color: ${color.gray_20};
-      border: 1px solid ${color.gray_30};
-    }
-
-    &:disabled {
-      opacity: 0.4;
-      background-color: ${color.gray_10};
-      border: 1px solid ${color.gray_20};
-    }
-  `,
-
-  filled_gray_blue: css`
-    ${mixinBtn2};
-    ${font.medium_13};
-    color: ${color.blue_10};
-    background-color: ${color.gray_10};
-
-    &:not(:disabled):hover {
-      background-color: ${color.gray_20};
-    }
-
-    &:disabled {
-      opacity: 0.4;
-      background-color: ${color.gray_10};
-    }
-  `,
-
-  ghost: css`
-    ${font.regular_14};
-    position: relative;
-    padding: 0;
-    color: ${color.gray_70};
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 4px;
-      width: 100%;
-      height: 0.5px;
-      background-color: ${color.gray_70};
-    }
-
-    &:not(:disabled):hover {
-      color: ${color.gray_80};
-
-      &::before {
-        background-color: ${color.gray_80};
-      }
-    }
-
-    &:disabled {
-      opacity: 0.6;
-    }
-  `,
-  ghost_blue: css`
-    ${font.regular_14};
-    position: relative;
-    padding: 0;
-    color: ${color.blue_10};
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 2px;
-      width: 100%;
-      height: 1px;
+  size: {
+    xs: css`
+      ${flexBoxCenter};
+      ${font.medium_14};
+      height: 32px;
+      border-radius: 10px;
+      padding: 0 12px;
+    `,
+    sm: css`
+      ${flexBoxCenter};
+      ${font.medium_14};
+      height: 36px;
+      border-radius: 10px;
+      padding: 0 16px;
+    `,
+    smd: css`
+      ${flexBoxCenter};
+      ${font.medium_14};
+      height: 40px;
+      border-radius: 10px;
+      padding: 0 20px;
+    `,
+    md: css`
+      ${flexBoxCenter};
+      ${font.medium_15};
+      height: 44px;
+      border-radius: 10px;
+      padding: 0 20px;
+    `,
+    lg: css`
+      ${flexBoxCenter};
+      ${font.medium_15};
+      height: 52px;
+      border-radius: 10px;
+      padding: 0 24px;
+    `,
+  },
+  variant: {
+    primary: css`
+      color: ${color.white};
       background-color: ${color.blue_10};
-    }
+      transition: 0.3s;
 
-    &:not(:disabled):hover {
-      color: ${color.blue_20};
+      @media (hover: hover) {
+        &:not(:disabled):hover {
+          background-color: ${color.blue_10_40};
+        }
+      }
 
-      &::before {
+      &:disabled {
         background-color: ${color.blue_20};
+        opacity: 0.4;
       }
-    }
+    `,
+    secondary: css`
+      color: ${color.gray_60};
+      background-color: ${color.gray_20};
+      transition: 0.3s;
 
-    &:disabled {
-      color: ${color.blue_10_10};
+      @media (hover: hover) {
+        &:not(:disabled):hover {
+          background-color: ${color.gray_30};
+        }
+      }
+
+      &:disabled {
+        background-color: ${color.gray_20};
+        opacity: 0.4;
+      }
+    `,
+    icon: css`
+      ${flexBoxCenter};
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid ${color.gray_20};
+      background-color: ${color.white};
+
+      @media (hover: hover) {
+        &:not(:disabled):hover {
+          background-color: ${color.gray_10};
+        }
+      }
+    `,
+    ghost: css`
+      ${font.regular_14};
+      position: relative;
+      color: ${color.gray_60};
 
       &::before {
-        background-color: ${color.blue_10_10};
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: transparent;
+        transition: 0.3s;
       }
-    }
-  `,
 
-  ghost_red: css`
-    ${font.regular_14};
-    position: relative;
-    padding: 0;
-    color: ${color.red_20};
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 2px;
-      width: 100%;
-      height: 1px;
-      background-color: ${color.red_20};
-    }
-
-    &:not(:disabled):hover {
-      color: ${color.red_30};
+      @media (hover: hover) {
+        &:not(:disabled):hover::before {
+          background-color: ${color.gray_60};
+        }
+      }
+    `,
+    link: css`
+      ${font.regular_14};
+      position: relative;
+      height: max-content;
+      color: ${color.gray_60};
+      transition: 0.3s;
 
       &::before {
-        background-color: ${color.red_30};
+        content: '';
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: ${color.gray_60};
+        transition: 0.3s;
       }
-    }
 
-    &:disabled {
-      color: ${color.red_10};
+      @media (hover: hover) {
+        &:not(:disabled):hover {
+          color: ${color.black};
 
-      &::before {
-        background-color: ${color.red_10};
+          &::before {
+            background-color: ${color.black};
+          }
+        }
       }
-    }
-  `,
+    `,
+  },
+}
 
-  alert: css`
-    ${font.medium_15};
-    position: relative;
-    padding: 0;
-    color: ${color.gray_50};
-
-    &:not(:disabled):hover {
-      color: ${color.gray_70};
-
-      &::before {
-        background-color: ${color.gray_70};
-      }
-    }
-
-    &:disabled {
-      opacity: 0.6;
-    }
-  `,
-
-  alert_blue: css`
-    ${font.medium_15};
-    position: relative;
-    padding: 0;
-    color: ${color.blue_10};
-
-    &:not(:disabled):hover {
-      color: ${color.blue_20};
-
-      &::before {
-        background-color: ${color.blue_20};
-      }
-    }
-
-    &:disabled {
-      color: ${color.blue_10_10};
-
-      &::before {
-        background-color: ${color.blue_10_10};
-      }
-    }
-  `,
-
-  alert_red: css`
-    ${font.medium_15};
-    position: relative;
-    padding: 0;
-    color: ${color.red_20};
-
-    &:not(:disabled):hover {
-      color: ${color.red_30};
-
-      &::before {
-        background-color: ${color.red_30};
-      }
-    }
-
-    &:disabled {
-      color: ${color.red_10};
-
-      &::before {
-        background-color: ${color.red_10};
-      }
-    }
-  `,
-} as const
-
-export type BtnTheme = typeof button
+export type ButtonTheme = typeof button

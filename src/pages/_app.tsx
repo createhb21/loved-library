@@ -1,4 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { type ReactElement } from 'react'
+import React from 'react'
+import { globalQueryErrorHandler } from '@/libs/client/globalQueryErrorHandler'
 import { globalStyles, theme } from '@/styles'
 import { ThemeProvider, Global } from '@emotion/react'
 import type { AppContext, AppInitialProps, AppLayoutProps } from 'next/app'
@@ -12,10 +17,31 @@ const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
 }: AppLayoutProps) => {
   const getLayout = Component.getLayout ?? ((page: ReactElement) => page)
 
+  const [queryClient] = React.useState<QueryClient | any>(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            suspense: true,
+            retryOnMount: false,
+            refetchOnReconnect: false,
+            refetchOnWindowFocus: false,
+
+            onError: (err: unknown) => globalQueryErrorHandler(err, queryClient),
+          },
+        },
+      })
+  )
+
   return (
     <ThemeProvider theme={theme}>
       <Global styles={globalStyles} />
-      {getLayout(<Component {...pageProps} />)}
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydrateState}>
+          <ReactQueryDevtools initialIsOpen={false} />
+          {getLayout(<Component {...pageProps} />)}
+        </Hydrate>
+      </QueryClientProvider>
     </ThemeProvider>
   )
 }
