@@ -27,13 +27,13 @@ BookSearchPage.getLayout = function getLayout(page: ReactElement) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const filter = query?.filter || ''
   const hasKeyword = Boolean(query?.keyword)
+  const hasFilter = query?.filter || ''
 
   return {
     props: {
-      filter,
       hasKeyword,
+      filter: { ...(hasFilter && { filter: query?.filter }) },
     },
   }
 }
